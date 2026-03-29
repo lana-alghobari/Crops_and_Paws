@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=4 uid="uid://cleapt14s4t0q"]
+[gd_scene load_steps=3 format=4 uid="uid://cleapt14s4t0q"]
 
 [ext_resource type="TileSet" uid="uid://dydswg77oi30n" path="res://Tilesets/gameTileset.tres" id="1_c0mph"]
+[ext_resource type="PackedScene" uid="uid://cla286ro0xi1e" path="res://scenes/characters/player/elstupido.tscn" id="2_7swih"]
 
 [node name="TestSceneTileMap" type="Node2D"]
 
@@ -22,3 +23,6 @@ tile_set = ExtResource("1_c0mph")
 [node name="Nature" type="TileMapLayer" parent="gameTileMap"]
 tile_map_data = PackedByteArray("AAAbAAYAAwADAAAAAAAGAAsAAwADAAAAAAAVAAkAAwADAAAAAAAPAAcAAwADAAAAAAAaAAwAAwADAAAAAAAaABAAAwADAAAAAAAbABAAAwAFAAAAAAAbAA0AAwAFAAAAAAAbAAcAAwAFAAAAAAAPAAgAAwAGAAAAAAAaAA0AAwAGAAAAAAAXAAoAAwAHAAAAAAAWAAoAAwAIAAAAAAAQAA4AAwAIAAAAAAARAA4AAwADAAAAAAAJAAYAAwAIAAIAAAAIAAkAAwAIAAIAAAAfAAoAAwAIAAIAAAAgAAcAAwAIAAIAAAAiAAsAAwAIAAIAAAAbABEAAwAFAAMAAAAIAA8AAwAFAAMAAAAIABAAAwAHAAMAAAAIAAsAAwAHAAMAAAAdAAsAAwAFAAMAAAAhAAsAAwAFAAMAAAAQAAoAAwAFAAMAAAAPAAoAAwAEAAIAAAAXAA4AAwAEAAIAAAAeAA4AAwAIAAQAAAAeAA0AAwAHAAQAAAA=")
 tile_set = ExtResource("1_c0mph")
+
+[node name="elstupido" parent="." instance=ExtResource("2_7swih")]
+position = Vector2(218, 176)
