@@ -1,8 +1,9 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://dydswg77oi30n"]
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://dydswg77oi30n"]
 
 [ext_resource type="Texture2D" uid="uid://bm7aafc6mweej" path="res://assets/game/tilesets/Water.png" id="1_bcath"]
 [ext_resource type="Texture2D" uid="uid://3ybkepisdbyo" path="res://assets/game/tilesets/grass.png" id="2_ao20k"]
 [ext_resource type="Texture2D" uid="uid://6g6v00qo760s" path="res://assets/game/tilesets/tilled_dirt_wide.png" id="3_kqy45"]
+[ext_resource type="Texture2D" uid="uid://bf5fh08y24xu0" path="res://assets/game/objects/grass_biom_things.png" id="4_5qpou"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ao20k"]
 texture = ExtResource("1_bcath")
@@ -443,6 +444,35 @@ texture = ExtResource("3_kqy45")
 1:2/0/terrains_peering_bit/top_side = 1
 1:2/0/terrains_peering_bit/top_right_corner = 1
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1t514"]
+texture = ExtResource("4_5qpou")
+8:0/0 = 0
+7:0/0 = 0
+6:0/0 = 0
+5:0/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+8:2/size_in_atlas = Vector2i(1, 2)
+8:2/0 = 0
+7:2/0 = 0
+6:2/0 = 0
+5:2/0 = 0
+4:2/0 = 0
+3:2/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+1:3/0 = 0
+0:3/0 = 0
+3:0/size_in_atlas = Vector2i(2, 2)
+3:0/0 = 0
+
 [resource]
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Grass Terrain"
@@ -452,3 +482,4 @@ terrain_set_0/terrain_1/color = Color(0.15926385, 0.5053956, 0.46955276, 1)
 sources/0 = SubResource("TileSetAtlasSource_ao20k")
 sources/1 = SubResource("TileSetAtlasSource_kqy45")
 sources/2 = SubResource("TileSetAtlasSource_5qpou")
+sources/3 = SubResource("TileSetAtlasSource_1t514")
