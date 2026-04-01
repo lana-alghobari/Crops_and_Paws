@@ -1,9 +1,11 @@
-[gd_scene load_steps=47 format=3 uid="uid://cla286ro0xi1e"]
+[gd_scene load_steps=49 format=3 uid="uid://cla286ro0xi1e"]
 
 [ext_resource type="Texture2D" uid="uid://f66gotxn53kh" path="res://assets/game/characters/basic_character_action.png" id="1_m0djc"]
+[ext_resource type="Script" uid="uid://bw8fechhh1uj2" path="res://scenes/characters/player/elstupido.gd" id="1_niiqy"]
 [ext_resource type="Texture2D" uid="uid://bhpyr3g7ovco" path="res://assets/game/characters/basic_character_spritesheet.png" id="2_b1rkj"]
 [ext_resource type="Script" uid="uid://dgn2jmwvms6eq" path="res://scripts/state_machine/node_state_machine.gd" id="3_6ot20"]
 [ext_resource type="Script" uid="uid://o6ro37k7c4in" path="res://scenes/characters/player/idle_state.gd" id="4_vdd47"]
+[ext_resource type="Script" uid="uid://bg35enmlkhmru" path="res://scenes/characters/player/walk_state.gd" id="5_vdd47"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ot20"]
 atlas = ExtResource("1_m0djc")
@@ -101,14 +103,6 @@ region = Rect2(0, 144, 48, 48)
 atlas = ExtResource("1_m0djc")
 region = Rect2(48, 144, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ecxsw"]
-atlas = ExtResource("2_b1rkj")
-region = Rect2(96, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_deym7"]
-atlas = ExtResource("2_b1rkj")
-region = Rect2(144, 0, 48, 48)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_0p6fy"]
 atlas = ExtResource("2_b1rkj")
 region = Rect2(96, 48, 48, 48)
@@ -116,6 +110,14 @@ region = Rect2(96, 48, 48, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_iw0hy"]
 atlas = ExtResource("2_b1rkj")
 region = Rect2(144, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecxsw"]
+atlas = ExtResource("2_b1rkj")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_deym7"]
+atlas = ExtResource("2_b1rkj")
+region = Rect2(144, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s7ep2"]
 atlas = ExtResource("2_b1rkj")
@@ -301,17 +303,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ecxsw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_deym7")
-}],
-"loop": true,
-"name": &"walking front",
-"speed": 3.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_0p6fy")
 }, {
 "duration": 1.0,
@@ -320,6 +311,17 @@ animations = [{
 "loop": true,
 "name": &"walking_back",
 "speed": 3.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecxsw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_deym7")
+}],
+"loop": true,
+"name": &"walking_front",
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -393,11 +395,12 @@ radius = 6.0
 height = 14.0
 
 [node name="elstupido" type="CharacterBody2D"]
+script = ExtResource("1_niiqy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_727on")
-animation = &"idle_front"
+animation = &"walking_front"
 autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -410,5 +413,10 @@ initial_node_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="stateMachine" node_paths=PackedStringArray("player", "animation")]
 script = ExtResource("4_vdd47")
+player = NodePath("../..")
+animation = NodePath("../../AnimatedSprite2D")
+
+[node name="Walk" type="Node" parent="stateMachine" node_paths=PackedStringArray("player", "animation")]
+script = ExtResource("5_vdd47")
 player = NodePath("../..")
 animation = NodePath("../../AnimatedSprite2D")
