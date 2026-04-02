@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://cla286ro0xi1e"]
+[gd_scene load_steps=50 format=3 uid="uid://cla286ro0xi1e"]
 
 [ext_resource type="Texture2D" uid="uid://f66gotxn53kh" path="res://assets/game/characters/basic_character_action.png" id="1_m0djc"]
 [ext_resource type="Script" uid="uid://bw8fechhh1uj2" path="res://scenes/characters/player/elstupido.gd" id="1_niiqy"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dgn2jmwvms6eq" path="res://scripts/state_machine/node_state_machine.gd" id="3_6ot20"]
 [ext_resource type="Script" uid="uid://o6ro37k7c4in" path="res://scenes/characters/player/idle_state.gd" id="4_vdd47"]
 [ext_resource type="Script" uid="uid://bg35enmlkhmru" path="res://scenes/characters/player/walk_state.gd" id="5_vdd47"]
+[ext_resource type="Script" uid="uid://cwcvoote8f7cf" path="res://scenes/characters/player/chopping_state.gd" id="7_ecnwl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ot20"]
 atlas = ExtResource("1_m0djc")
@@ -396,6 +397,7 @@ height = 14.0
 
 [node name="elstupido" type="CharacterBody2D"]
 script = ExtResource("1_niiqy")
+player_direction = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
@@ -420,3 +422,6 @@ animation = NodePath("../../AnimatedSprite2D")
 script = ExtResource("5_vdd47")
 player = NodePath("../..")
 animation = NodePath("../../AnimatedSprite2D")
+
+[node name="Chopping" type="Node" parent="stateMachine"]
+script = ExtResource("7_ecnwl")
