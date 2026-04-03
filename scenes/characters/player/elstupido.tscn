@@ -177,7 +177,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vdd47")
 }],
-"loop": true,
+"loop": false,
 "name": &"chopping_back",
 "speed": 3.0
 }, {
@@ -188,7 +188,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ecnwl")
 }],
-"loop": true,
+"loop": false,
 "name": &"chopping_front",
 "speed": 3.0
 }, {
@@ -199,7 +199,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jxfd0")
 }],
-"loop": true,
+"loop": false,
 "name": &"chopping_left",
 "speed": 3.0
 }, {
@@ -210,7 +210,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rdpk7")
 }],
-"loop": true,
+"loop": false,
 "name": &"chopping_right",
 "speed": 3.0
 }, {
@@ -397,12 +397,11 @@ height = 14.0
 
 [node name="elstupido" type="CharacterBody2D"]
 script = ExtResource("1_niiqy")
-player_direction = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_727on")
-animation = &"walking_front"
+animation = &"chopping_left"
 autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -423,5 +422,7 @@ script = ExtResource("5_vdd47")
 player = NodePath("../..")
 animation = NodePath("../../AnimatedSprite2D")
 
-[node name="Chopping" type="Node" parent="stateMachine"]
+[node name="Chopping" type="Node" parent="stateMachine" node_paths=PackedStringArray("player", "animation")]
 script = ExtResource("7_ecnwl")
+player = NodePath("../..")
+animation = NodePath("../../AnimatedSprite2D")
