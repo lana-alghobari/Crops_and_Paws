@@ -1,0 +1,10 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dlps8gq08ueuw"]
+
+[ext_resource type="Texture2D" uid="uid://yfcbce8dbffk" path="res://assets/game/tilesets/Wooden_House_Walls_Tilset.png" id="1_0e3uf"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_juxxr"]
+texture = ExtResource("1_0e3uf")
+1:1/0 = 0
+
+[resource]
+sources/0 = SubResource("TileSetAtlasSource_juxxr")
