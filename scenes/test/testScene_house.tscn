@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://dydswg77oi30n" path="res://Tilesets/gameTileset.tres" id="1_g4vnp"]
 [ext_resource type="PackedScene" uid="uid://cla286ro0xi1e" path="res://scenes/characters/player/elstupido.tscn" id="2_l3mob"]
 
-[node name="TestSceneTileMap" type="Node2D"]
+[node name="TestSceneHouseTileMap" type="Node2D"]
 
 [node name="gameTileMap" type="Node2D" parent="."]
 
