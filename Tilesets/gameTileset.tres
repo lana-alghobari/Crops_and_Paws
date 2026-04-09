@@ -474,8 +474,9 @@ texture = ExtResource("4_5qpou")
 3:0/size_in_atlas = Vector2i(2, 2)
 3:0/0 = 0
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_5m7vb"]
-scenes/1/scene = ExtResource("5_1t514")
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_1t514"]
+resource_name = "largeHouse"
+scenes/2/scene = ExtResource("5_1t514")
 
 [resource]
 terrain_set_0/mode = 0
@@ -487,4 +488,4 @@ sources/0 = SubResource("TileSetAtlasSource_ao20k")
 sources/1 = SubResource("TileSetAtlasSource_kqy45")
 sources/2 = SubResource("TileSetAtlasSource_5qpou")
 sources/3 = SubResource("TileSetAtlasSource_1t514")
-sources/4 = SubResource("TileSetScenesCollectionSource_5m7vb")
+sources/5 = SubResource("TileSetScenesCollectionSource_1t514")
